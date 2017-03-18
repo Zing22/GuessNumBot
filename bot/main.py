@@ -17,8 +17,8 @@ def unknow_msg(msg):
 def raw_msg_handle(msg):
     # 只支持群聊
     if not isinstance(msg.sender, Group):
+        print('[SINGLE]',msg)
         msg.chat.send(NEED_GROUP)
-        return False
     print(msg)
     res = guessNumber.checkRaw(msg.chat, msg.member, msg.text)
     if res:
